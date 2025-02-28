@@ -38,7 +38,7 @@ function Register() {
       <h2 className="register__title">Registration</h2>
 
       <form onSubmit={handleSubmit} className="register__form">
-        <label className="register__form-label" name="username">
+        <label className="register__form-label" htmlFor="username">
           Username
         </label>
         <input
@@ -46,11 +46,12 @@ function Register() {
           className="register__form-input"
           name="username"
           placeholder="Username"
+          id="username"
           onChange={handleChange}
           required
         />
 
-        <label className="register__form-label" name="email">
+        <label className="register__form-label" htmlFor="email" >
           Email
         </label>
         <input
@@ -58,18 +59,20 @@ function Register() {
           className="register__form-input"
           name="email"
           placeholder="Email"
+          id="email"
           onChange={handleChange}
           required
         />
 
-        <label className="register__form-password" name="password">
+        <label className="register__form-password" htmlFor="password">
           Password
         </label>
         <input
           type="password"
-          className="register__form-password"
+          className="register__form-input"
           name="password"
           placeholder="Password"
+          id="password"
           onChange={handleChange}
           required
         />
