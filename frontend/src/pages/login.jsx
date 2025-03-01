@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import {
-  createCookie,
-  createCookieSessionStorage,
-  useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styles from "../assets/styles/login.module.scss";
 
 function Login() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -39,42 +36,51 @@ function Login() {
   };
 
   return (
-    <>
-      <h2 className="login__title">Login</h2>
+    <div className={styles.login}>
+      <h2 className={styles.loginTitle}>Login</h2>
 
-      <form onSubmit={handleSubmit} className="login__form">
-        <label htmlFor="username" className="login__form-label">
-          Username
-        </label>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          id="username"
-          className="login__form-input"
-          onChange={handleChange}
-          required
-        />
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
 
-        <label className="login__form-password" htmlFor="password">
-          Password
-        </label>
-        <input
-          type="password"
-          className="login__form-input"
-          name="password"
-          placeholder="Password"
-          id="password"
-          onChange={handleChange}
-          required
-        />
+        <div className={styles.loginFormWrap}>
+          <label htmlFor="username" className={styles.loginFormLabel}>
+            Username
+          </label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            id="username"
+            className={styles.loginFormInput}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-        {error && <p className="login__form-error">{error}</p>}
-        <button type="submit" className="login__form-submit">
+        <div className={styles.loginFormWrap}>
+          <label className={styles.loginFormLabel} htmlFor="password">
+            Password
+          </label>
+          <input
+            type="password"
+            className={styles.loginFormInput}
+            name="password"
+            placeholder="Password"
+            id="password"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {error && <div className={styles.loginFormError}>{error}</div>}
+
+        <button type="submit" className={styles.loginFormSubmit}>
           Log in
         </button>
+
+        <div className={styles.loginFormHave}>Don't have account? <br />
+          <a className={styles.loginFormHaveLink} href="/register">Register</a></div>
       </form>
-    </>
+    </div>
   );
 }
 

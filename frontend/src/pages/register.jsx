@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from '../assets/styles/register.module.scss';
 
 function Register() {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
@@ -34,55 +35,67 @@ function Register() {
   };
 
   return (
-    <>
-      <h2 className="register__title">Registration</h2>
+    <div className={styles.register}>
+      <h1 className={styles.registerTitle}>Registration</h1>
 
-      <form onSubmit={handleSubmit} className="register__form">
-        <label className="register__form-label" htmlFor="username">
-          Username
-        </label>
-        <input
-          type="text"
-          className="register__form-input"
-          name="username"
-          placeholder="Username"
-          id="username"
-          onChange={handleChange}
-          required
-        />
+      <form onSubmit={handleSubmit} className={styles.registerForm}>
 
-        <label className="register__form-label" htmlFor="email" >
-          Email
-        </label>
-        <input
-          type="email"
-          className="register__form-input"
-          name="email"
-          placeholder="Email"
-          id="email"
-          onChange={handleChange}
-          required
-        />
+        <div className={styles.registerFormWrap}>
+          <label className={styles.registerFormLabel} htmlFor="username">
+            Username
+          </label>
 
-        <label className="register__form-password" htmlFor="password">
-          Password
-        </label>
-        <input
-          type="password"
-          className="register__form-input"
-          name="password"
-          placeholder="Password"
-          id="password"
-          onChange={handleChange}
-          required
-        />
+          <input
+            type="text"
+            className={styles.registerFormInput}
+            name="username"
+            placeholder="Username"
+            id="username"
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-        {error && <p className="register__form-error">{error}</p>}
-        <button type="submit" className="register__form-submit">
+        <div className={styles.registerFormWrap}>
+          <label className={styles.registerFormLabel} htmlFor="email">
+            Email
+          </label>
+          <input
+            type="email"
+            className={styles.registerFormInput}
+            name="email"
+            placeholder="Email"
+            id="email"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className={styles.registerFormWrap}>
+          <label className={styles.registerFormLabel} htmlFor="password">
+            Password
+          </label>
+          <input
+            type="password"
+            className={styles.registerFormInput}
+            name="password"
+            placeholder="Password"
+            id="password"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {error && <div className={styles.registerFormError}>{error}</div>}
+
+        <button type="submit" className={styles.registerFormSubmit}>
           Register
         </button>
+
+        <div className={styles.registerFormHave}>Already have account? <br />
+        <a className={styles.registerFormHaveLink} href="/login">Log in</a></div>
       </form>
-    </>
+    </div>
   );
 }
 

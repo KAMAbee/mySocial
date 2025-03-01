@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  top: 0;
+  left: 0;
+  background-color: rgb(234, 234, 234);
+  height: 100vh;
+  width: 100%;
+  font-family: "Lato", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -60px;
+
+  &Form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+
+    &Wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    &Label {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &Input {
+      width: 240px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid black;
+      font-size: 15px;
+      padding: 0 8px;
+    }
+
+    &Error {
+      color: red;
+      font-weight: 500;
+      margin: 5px 0;
+    }
+
+    &Submit {
+      background-color: rgb(233, 233, 233);
+      width: 160px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid black;
+      font-size: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(213, 212, 212);
+      }
+
+      &:active {
+        background-color: rgb(190, 190, 190);
+      }
+    }
+
+    &Have {
+      text-align: center;
+
+      &Link {
+        color: rgb(79, 79, 236);
+        font-weight: 600;
+
+        &:hover {
+          color: rgb(67, 67, 189);
+        }
+      }
+    }
+  }
+}

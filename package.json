@@ -4,5 +4,8 @@
   },
   "scripts": {
     "start": "concurrently \"cd backend && node src/server.js\" \"cd frontend && npm run dev\""
+  },
+  "dependencies": {
+    "sass": "^1.85.1"
   }
 }
